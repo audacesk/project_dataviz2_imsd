@@ -1,0 +1,107 @@
+Plan:
+
+I / "GLOBAL"
+	a) Shock! Graphique animé (via bouton play): évolution du nombre d'attaques terroristes de 1970 à 2017
+	b) Map static: toutes les attaques depuis 1970 (petits points) => montrer la concentration historique des attaques
+
+II / "WHERE?"
+	a) Shock! Bouton aléatoire: quand l'utilisateur clic dessus, une attaque s'affiche au hasard avec comme informations:
+		-Gros titres dans les journaux
+		-Date
+		-Lieux
+		-Cible
+		-Critères (pourquoi cette attaque?)
+		-Résumé de l'attaque
+	b) Top 50 des villes les plus touchées dans l'histoire (optionnel: filtre pour voir 1) depuis 1970 2) depuis les années 2000)
+	c) Graphique static: évolution dans le temps de la causalité (une courbe pour chaque région, représentant le nombre de décès au fil du temps)
+
+
+III / "WHO?"
+	a) Top 20 des groupes terroristes
+	b) Map avec un filtre de date: quand l'utilisateur déplace sa souris, il peut voir des informations sur chaque pays:
+		-Nombre de décès total et moyen par attaque
+		-Attaque la plus représentée dans le pays
+		-Entité la plus visée
+		
+
+IV / "HOW?"
+	a) Shock! Nuage de point: méthode d'attaque (bombe, assassinat, prise d'otage...)
+	b) Graphique avec filtre temporel: évolution des utilisations d'armes
+
+
+
+
+
+
+
+
+TRASH:
+Climate Change: Earth Surface Temperature Data (https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data#GlobalTemperatures.csv)
+	-[1750:2013]
+	-land temperature (average, min, max, uncertainty)
+	-land and ocean (average, min, max, uncertainty)
+	-global average land temperature by country
+	-global average land temperature by state
+	-global average land temperature by city
+	-global average land temperature by major city
+	-Usability: 6.5
+	-To be clean:
+		*missing data (about 38%)
+		*country name duplicate
+	-Example of data viz made with this dataset:
+		*https://www.kaggle.com/amelinvladislav/map-of-temperatures-and-analysis-of-global-warming
+		*https://www.kaggle.com/pavelevap/global-warming-confirmed-basemap-animation
+
+Global Terrorism Database (https://www.kaggle.com/START-UMD/gtd)
+	-[1970-2017] except 1993
+	-Variable (aprox. 100 including: date (year/month/day), location (country/region/state/longitude/latitude), success?, summary, attack type, taget type...)
+	-Usability: 7.1 ("easy to understand and includes essential metadata" => subtitle, tags, overview description and cover image checked)
+	-ideas: button => pick randomly a "summary" (summary, date & location) for a specific attack
+	-Example of data viz:
+		*https://www.kaggle.com/chchloe29/global-terrorist-attacks-data-visualization (solide, il a un truc pas mal pour voir les données manquantes)
+		*https://www.kaggle.com/pavansanagapati/eda-with-tableau-visualisation (Avec TABLEAU! il s'est pas fait chier le mec)
+		*https://www.kaggle.com/pranav84/visualizing-terrorist-attacks-on-india
+		*https://www.kaggle.com/swapnil216/interactive-data-visualization-on-global-terrorism
+
+To be cleaned/preprocess:
+	-CREATE HIERARCHIES between variables
+	-eventid:
+		=> remove first 5 rows as there is no date
+		=> pick only 8 first numbers
+	-month:
+		=> value = 0
+	-day:
+		=> value = 0 
+	-countries' dependencies
+	-countries to be match with code
+	-if multiples attack type in "attack type" => means that there has been a following of attacks independent from each other
+	-when "-99" => unknown
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
